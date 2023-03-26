@@ -13,6 +13,18 @@ var day = daysOfWeek[today.getDay()]
 var month = monthsOfYear[today.getMonth()]
 var year = today.getFullYear();
 
+//adding logic//
+if (hour > 12) {
+    hour = hour - 12;
+    document.getElementById('sesion').innerHTML = "PM"
+}else {
+    document.getElementById('sesion').innerHTML = "AM";
+}
+
+if (hour < 10) {hour = "0" + hour} else{ hour}
+if (min < 10) {min = "0" + min} else{min}
+if (sec < 10) {sec = "0" + sec}else{sec}
+
 //adding information to html file//
 document.getElementById("hr").innerHTML = hour 
 document.getElementById("min").innerHTML = min
@@ -25,3 +37,6 @@ document.getElementById("year").innerHTML = year
 }
 
 setInterval(clock, 1000);
+
+
+
